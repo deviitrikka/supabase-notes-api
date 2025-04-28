@@ -117,26 +117,20 @@ supabase db push
 
 ### 5. Create and deploy Edge Functions
 ```bash
-# Create new function (example)
-supabase functions new post-notes
-
-# Deploy specific functions
-supabase functions deploy post-notes
-supabase functions deploy get-notes
-
-# Or deploy all at once
-supabase functions deploy
+> Create a function
+$supabase functions new post-notes
+> Deploy your function
+$
+supabase functions deploy post-notes --project-ref ohfwwmignbjlgqsnbobc 
+> Invoke your function
+$
+curl -L -X POST 'https://ohfwwmignbjlgqsnbobc.supabase.co/functions/v1/post-notes' --header 'Content-Type: application/json' \
+--data '{
+  "user_id": "01ee4704-2eee-4eab-aa25-cbd249d26efd",
+  "title": "Sample Note",
+  "content": "This is a test note created using a Supabase Edge Function."
+}'
 ```
-
-### 6. Test function manually (demo)
-```bash
-curl -L -X POST \
-  'https://ohfwwmignbjlgqsnbobc.supabase.co/functions/v1/hello-world' \
-  -H 'Authorization: Bearer [YOUR ANON KEY]' \
-  --data '{"name":"Functions"}'
-```
-
----
 
 ## 🧪 Test with Postman
 
@@ -162,7 +156,9 @@ curl -L -X POST \
 ```
 
 5. Click **Send**, and inspect the response JSON.
+![Screenshot 2025-04-28 093753](https://github.com/user-attachments/assets/9ea16c48-eadb-4e05-b9fa-7140ce9a6751)
 
+![Screenshot 2025-04-28 025746](https://github.com/user-attachments/assets/6b36f79a-e160-4f8d-9176-f93ca0fb98c4)
 ---
 
 ## 🔐 Security
