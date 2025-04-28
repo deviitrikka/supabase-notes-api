@@ -186,8 +186,8 @@ curl -L -X POST 'https://ohfwwmignbjlgqsnbobc.supabase.co/functions/v1/post-note
 ## ✅ Deliverables Checklist
 
 - [x] `schema.sql` – contains the `CREATE TABLE notes` statement  
-- [x] `functions/post-notes.js` – handles creating notes (`POST /notes`)  
-- [x] `functions/get-notes.js` – handles listing notes (`GET /notes`)  
+- [x] `functions/post-notes/index.ts` – handles creating notes (`POST /notes`)  
+- [x] `functions/get-notes/index.ts` – handles listing notes (`GET /notes`)  
 - [x] Two working curl commands for both endpoints  
 - [x] Deployment instructions using Supabase CLI  
 - [x] "Why" comments for HTTP method and parameter sources  
